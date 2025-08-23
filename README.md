@@ -9,10 +9,7 @@
 ***
 
 ## Tools Used
-- **Language:** C++
-- **Compiler:** g++ / any C++ compatible compiler
-- **IDE:** Code::Blocks / Dev-C++ / VS Code or equivalent
-- **Operating System:** Any (Windows / Linux / MacOS)
+VS Code
 
 ---
 
@@ -105,6 +102,48 @@ Cuboid c1;       // c1 is an object of class Cuboid
 | Access     | Via object directly (if public)| Called via object   |
 | Memory     | Stored per object             | Shared among all objects |
 | Example    | height, width, length         | volume(), disp()     |
+
+--- 
+
+### Data Encapsulation
+- Encapsulation is the process of **wrapping data members (variables) and member functions (methods) together** into a single logical unit called a class.  
+- It is one of the **fundamental principles of Object-Oriented Programming (OOP)**.  
+- Provides **data hiding**, meaning sensitive information inside a class can only be accessed using controlled methods.  
+- Achieved using **access specifiers**:  
+  - `private` → data/methods accessible only within the class.  
+  - `public` → data/methods accessible from outside the class.  
+  - `protected` → accessible within the class and its derived classes.  
+- Ensures **security** by preventing unauthorized access and accidental modification of class data.  
+- Promotes **modularity** since each class acts as a self-contained unit of code.  
+- Improves **code reusability** and **maintenance**, since internal details can be changed without affecting other parts of the program.  
+- Example in real life:  
+  - In a bank account class, balance is kept private, and only specific functions (like `deposit()` or `withdraw()`) can modify it.  
+  - This ensures that the balance cannot be directly altered from outside.  
+
+---
+
+### Block Diagram: Private vs Public Members
+
+                   +-----------------------------+
+                   |           Class             |
+                   +-----------------------------+
+                   |         Private             |
+                   |  - accountNumber            |
+                   |  - balance                  |
+                   |  (Hidden from outside)      |
+                   +-----------------------------+
+                   |          Public             |
+                   |  + deposit()                |
+                   |  + withdraw()               |
+                   |  + checkBalance()           |
+                   |  (Accessible from outside)  |
+                   +-----------------------------+
+
+Outside World 
+   |
+   +---> Can only use Public methods
+   |
+   +---> Cannot directly access Private data
 
 ---
 ### Public and Private Access Specifiers
